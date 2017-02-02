@@ -1,0 +1,46 @@
+/*body {
+  padding-top: 50px;
+}*/
+.starter-template {
+  padding: 70px 15px;
+  text-align: center;
+}
+
+.dropbox {
+  background-color: #f5f5f5;
+  border-color: #ddd;
+  border-width: medium;
+  border-radius: 4px;
+}
+
+.btn-add-step {
+  padding: 10px;
+}
+
+.btn-group-add-step {
+  margin-bottom: 20px;
+}
+
+.step-number{
+  vertical-align: text-top;
+}
+
+.instruction-panel{
+  padding: 0px;
+}
+
+.step-container{
+  width: inherit;
+  height: inherit;
+  position: relative;
+}
+
+.step-number{
+  z-index: 2;
+  background-color: #f5f5f5;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  padding-left: 10px;
+  padding-right: 10px;
+}

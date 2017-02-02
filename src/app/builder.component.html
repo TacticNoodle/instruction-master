@@ -1,0 +1,71 @@
+<!-- grid layout, view padding -->
+<!-- ngIf is hack to cope with uncaught async promise errors -->
+<div class=".container-fluid">
+  <div class="starter-template">
+    <div class="row">
+      <div class="col-xs-12 col-lg-10 col-lg-offset-1">
+
+        <!-- instruction header -->
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <input [(ngModel)]="instruction.title" placeholder="Titel der Anleitung" class="form-control">
+          </div>
+
+          <div class="panel-footer">
+            <textarea [(ngModel)]="instruction.description" placeholder="Zweck und Beschreibung der Anleitung" class="form-control" rows="3"></textarea>
+          </div>
+        </div>
+
+        <!-- all the steps -->
+        <div *ngFor="let step of instruction.steps; let i = index" class="thumbnail">
+
+          <!-- Drag & Drop area -->
+          <div (dragenter)="setDragEnter($event, i)" (dragover)="setDragOver($event, i)" (dragleave)="setDragLeave($event, i)" (drop)="setDrop($event, i)" >
+            <!-- visible is nothing is chosen -->
+            <div *ngIf="!imageExist[i]" class="dropbox" [style.border-style]="isDragOver[i] ? 'solid' : 'dashed'">
+              <br>
+              <span class="glyphicon glyphicon-cloud-upload" aria-hidden="true"></span>
+              <p class="text-muted">Drag 'n' Drop - Bild zum {{i + 1}}. Schritt</p>
+              <br>
+              <!-- <input class="center-block" (change)="onImageChange($event, i)" type="file"> -->
+            </div>
+            <!-- visible if something was chosen -->
+            <img *ngIf="imageExist[i]" src="{{imageSources[i]}}" alt="Image preview..." class="img-responsive">
+          </div>
+
+          <!-- Description textfield area -->
+          <div class="caption">
+            <div class="row">
+              <div class="col-xs-1">
+                <h4>{{i + 1}}</h4>
+              </div>
+              <div class="col-xs-11">
+                <textarea [(ngModel)]="step.description" placeholder="Beschreibung" class="form-control" rows="2"></textarea>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="btn-group btn-group-justified btn-group-add-step" role="group" aria-label="...">
+          <div class="btn-group" role="group">
+            <button type="button" class="btn btn-default btn-add-step" (click)="onClickAddStep()">
+              <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+              <p>Weiteren Schritt hinzufügen</p>
+            </button>
+          </div>
+        </div>
+
+        <div class="btn-group btn-group-justified" role="group" aria-label="...">
+          <div class="btn-group" role="group">
+            <button type="button" class="btn btn-success" (click)="onClickSave()">Speichern</button>
+          </div>
+          <div class="btn-group" role="group">
+            <button type="button" class="btn btn-danger" (click)="onClickAbort()">Abbrechen</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

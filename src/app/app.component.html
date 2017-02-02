@@ -1,3 +1,8 @@
-<h1>
-  {{title}}
-</h1>
+<!-- Override default browser drag 'n drop image show behavior -->
+<div (dragenter)="setNoDragEnter($event, i)" (dragover)="setNoDragOver($event, i)" (drop)="setNoDrop($event, i)">
+  <!-- Navbar at the top -->
+  <top-bar></top-bar>
+
+  <!-- Instructions general -->
+  <router-outlet></router-outlet>
+</div>

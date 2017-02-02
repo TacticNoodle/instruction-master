@@ -1,0 +1,31 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+
+    <!-- must-have items -->
+    <div class="navbar-header">
+      <!-- dropdown menu for mobile devices -->
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <!-- brand -->
+      <a class="navbar-brand" routerLink="/home" routerLinkActive="active">Best Practices</a>
+    </div>
+
+    <!-- mobile: dropdown | desktop: right side -->
+    <div id="navbar" class="collapse navbar-collapse">
+      <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input #searchBox type="search" class="form-control" placeholder="Suche" (search)="onSearch(searchBox.value)">
+        </div>
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a routerLink="/builder" routerLinkActive="active">Erstellen</a></li>
+        <li><a routerLink="/admin" routerLinkActive="active">Verwalten</a></li>
+      </ul>
+    </div>
+
+  </div>
+</nav>
