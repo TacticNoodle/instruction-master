@@ -1,5 +1,23 @@
 # Fssecond
 
+Prototypical demo project for creating and viewing IT-instructions.
+
+## Feature list
+- Create own instructions: DONE
+- Search for instructions: DONE (search query >= 4 chars)
+- Administer instructions (Delete): DONE
+- Administer instructions (Favorite): NOT DONE
+- Administer instructions (Edit): NOT DONE
+
+## Setup instructions
+- Download/install and run MongoDB on standard port (27017)
+- Download/clone repository
+- Install npm dependencies for project
+- Run "ng build" for project
+- Run "node server.js" for project
+- Access via browser URL "localhost:1234"
+
+
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.24.
 
 ## Development server
