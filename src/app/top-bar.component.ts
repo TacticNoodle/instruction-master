@@ -1,5 +1,5 @@
 import { Component, Output, EventEmitter } from '@angular/core';
-import { Router }            from '@angular/router';
+import { Router } from '@angular/router';
 
 import { InstructionService } from './instruction.service';
 
@@ -10,10 +10,11 @@ import { InstructionService } from './instruction.service';
 })
 
 export class TopBarComponent {
+  showSearch: boolean;
 
   constructor(
     private router: Router
-  ) {}
+  ) { }
 
   onSearch(searchString: string): void {
     let link = ['/search-result', searchString];

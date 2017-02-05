@@ -28,7 +28,7 @@ var storage = multer.diskStorage({
     var pos = fileMimeType.search('/');
     var fileEnding = fileMimeType.slice(fileMimeType.length - pos + 1);
 
-    cb(null, file.originalname + '_' + Date.now() + '.' + fileEnding)
+    cb(null, Date.now() + '_' + file.originalname)
   }
 })
 
