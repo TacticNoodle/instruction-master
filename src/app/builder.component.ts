@@ -50,6 +50,9 @@ export class BuilderComponent {
     delete this.instruction['_id'];
     this.instructionService.addInstruction(this.instruction)
                            .subscribe(r => {});
+
+    let link = ['/home'];
+    this.router.navigate(link);
   }
 
   onClickAbort(): void {
