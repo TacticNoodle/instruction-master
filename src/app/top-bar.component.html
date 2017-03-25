@@ -18,7 +18,7 @@
     <div id="navbar" class="collapse navbar-collapse">
       <form class="navbar-form navbar-left" role="search">
         <div class="form-group">
-          <input #searchBox type="search" class="form-control" placeholder="Suche" (search)="onSearch(searchBox.value)">
+          <input #searchBox type="search" class="form-control" placeholder="Suche" (keyup.enter)="onSearch(searchBox.value)">
         </div>
       </form>
       <ul class="nav navbar-nav navbar-right">
