@@ -13,8 +13,7 @@ Prototypical demo project for creating and viewing IT-instructions.
 - Download/install and run MongoDB on standard port (27017)
 - Download/clone repository
 - Run "npm install" to install npm dependencies for project
-- Run "ng build" for project to create dist-folder
-- Create "uploads" folder within dist-folder
+- Run "ng build" for project 
 - Run "node server.js" for project
 - Access via browser URL "localhost:1234"
 
