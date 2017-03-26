@@ -10,6 +10,11 @@ const path = require('path');
 // Express - File imports
 //const api = require('./server/routes/api');
 
+const fs = require('fs');
+const dir = 'dist/uploads';
+if (!fs.existsSync(dir)) {
+  fs.mkdirSync(dir);
+}
 // Mongoose setup
 const dbUrl = 'mongodb://tacticnoodle:test123@ds137540.mlab.com:37540/mymongo';
 mongoose.connect(dbUrl);
@@ -19,6 +24,8 @@ var db = mongoose.connection;
 db.once('open', function() {});
 
 //Multer setup
+
+
 var storage = multer.diskStorage({
   destination: (req, file, cb) => {
     cb(null, 'dist/uploads/')
