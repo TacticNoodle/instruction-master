@@ -11,7 +11,7 @@ const path = require('path');
 //const api = require('./server/routes/api');
 
 // Mongoose setup
-const dbUrl = 'mongodb://localhost/secondTest';
+const dbUrl = 'mongodb://tacticnoodle:test123@ds137540.mlab.com:37540/mymongo';
 mongoose.connect(dbUrl);
 
 // Optional initialisations of the database
